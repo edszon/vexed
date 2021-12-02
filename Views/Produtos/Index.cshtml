@@ -1,0 +1,83 @@
+﻿@model IEnumerable<vexed.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fabricante.NomeFabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grupo.NomeGrupo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoEstoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoDisponivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneroProduto)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fabricante.NomeFabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupo.NomeGrupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoEstoque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoDisponivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneroProduto)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdProduto }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdProduto }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdProduto })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

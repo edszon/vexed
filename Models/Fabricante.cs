@@ -16,6 +16,6 @@ namespace vexed.Models
 
         [Required]
         [MaxLength(32)]
-        public string Fabricante { get; set; }
+        public string NomeFabricante { get; set; }
     }
 }

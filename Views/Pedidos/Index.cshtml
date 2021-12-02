@@ -1,0 +1,119 @@
+﻿@model IEnumerable<vexed.Models.Pedido>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CupomDesconto.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoEntrega.TipoDeEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PedidoPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPagamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PedidoEnviado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnvioRastreio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PedidoCancelado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCancelamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PedidoEntregue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrega)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CupomDesconto.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoEntrega.TipoDeEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PedidoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPagamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PedidoEnviado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnvioRastreio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PedidoCancelado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCancelamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PedidoEntregue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrega)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdPedido }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdPedido }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdPedido })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

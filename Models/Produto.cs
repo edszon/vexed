@@ -33,12 +33,16 @@ namespace vexed.Models
         public bool ProdutoDisponivel { get; set; }
 
         [Required]
+        [ForeignKey("Grupo")]
         public int IdGrupo { get; set; }
+        public Grupo Grupo { get; set; }
 
         [Required]
         public int GeneroProduto { get; set; }
 
         [Required]
+        [ForeignKey("Fabricante")]
         public int IdFabricante { get; set; }
+        public Fabricante Fabricante { get; set; }
     }
 }

@@ -16,6 +16,6 @@ namespace vexed.Models
 
         [Required]
         [MaxLength(32)]
-        public string Grupo { get; set; }
+        public string NomeGrupo { get; set; }
     }
 }

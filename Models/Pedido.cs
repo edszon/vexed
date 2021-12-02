@@ -16,12 +16,18 @@ namespace vexed.Models
         public int IdPedido { get; set; }
 
         [Required]
+        [ForeignKey("TipoEntrega")]
         public int IdTipoEntrega { get; set; }
+        public TipoEntrega TipoEntrega { get; set; }
 
+        [ForeignKey("CupomDesconto")]
         public int IdCupomDesconto { get; set; }
+        public CupomDesconto CupomDesconto { get; set; }
 
         [Required]
+        [ForeignKey("Cliente")]
         public int IdCliente { get; set; }
+        public Cliente Cliente { get; set; }
         
         [Required]
         public DateTime DataCadastro { get; set; }

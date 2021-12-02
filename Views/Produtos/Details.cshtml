@@ -1,0 +1,90 @@
+﻿@model vexed.Models.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Produto</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fabricante.NomeFabricante)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fabricante.NomeFabricante)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Grupo.NomeGrupo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Grupo.NomeGrupo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NomeProduto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DescricaoProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DescricaoProduto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PrecoProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PrecoProduto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdutoEstoque)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProdutoEstoque)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdutoDisponivel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProdutoDisponivel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GeneroProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GeneroProduto)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdProduto }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
