@@ -3,7 +3,7 @@ namespace vexed.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateTable : DbMigration
+    public partial class EmptyMigration : DbMigration
     {
         public override void Up()
         {
@@ -21,7 +21,7 @@ namespace vexed.Migrations
                 .PrimaryKey(t => t.IdCliente);
             
             CreateTable(
-                "dbo.CupomDescontos",
+                "dbo.CupomDescontoes",
                 c => new
                     {
                         IdCupomDesconto = c.Int(nullable: false, identity: true),
@@ -40,7 +40,7 @@ namespace vexed.Migrations
                 .PrimaryKey(t => t.IdFabricante);
             
             CreateTable(
-                "dbo.Grupos",
+                "dbo.Grupoes",
                 c => new
                     {
                         IdGrupo = c.Int(nullable: false, identity: true),
@@ -49,7 +49,7 @@ namespace vexed.Migrations
                 .PrimaryKey(t => t.IdGrupo);
             
             CreateTable(
-                "dbo.ItemPedidos",
+                "dbo.ItemPedidoes",
                 c => new
                     {
                         IdItemPedido = c.Int(nullable: false, identity: true),
@@ -59,13 +59,13 @@ namespace vexed.Migrations
                         PrecoItemPedido = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.IdItemPedido)
-                .ForeignKey("dbo.Pedidos", t => t.IdPedido, cascadeDelete: true)
-                .ForeignKey("dbo.Produtos", t => t.IdProduto, cascadeDelete: true)
+                .ForeignKey("dbo.Pedidoes", t => t.IdPedido, cascadeDelete: true)
+                .ForeignKey("dbo.Produtoes", t => t.IdProduto, cascadeDelete: true)
                 .Index(t => t.IdPedido)
                 .Index(t => t.IdProduto);
             
             CreateTable(
-                "dbo.Pedidos",
+                "dbo.Pedidoes",
                 c => new
                     {
                         IdPedido = c.Int(nullable: false, identity: true),
@@ -75,18 +75,18 @@ namespace vexed.Migrations
                         DataCadastro = c.DateTime(nullable: false),
                         ValorPedido = c.Double(nullable: false),
                         PedidoPago = c.Boolean(nullable: false),
-                        DataPagamento = c.DateTime(nullable: false),
+                        DataPagamento = c.DateTime(),
                         PedidoEnviado = c.Boolean(nullable: false),
-                        DataEnvio = c.DateTime(nullable: false),
+                        DataEnvio = c.DateTime(),
                         EnvioRastreio = c.String(),
                         PedidoCancelado = c.Boolean(nullable: false),
-                        DataCancelamento = c.DateTime(nullable: false),
+                        DataCancelamento = c.DateTime(),
                         PedidoEntregue = c.Boolean(nullable: false),
-                        DataEntrega = c.DateTime(nullable: false),
+                        DataEntrega = c.DateTime(),
                     })
                 .PrimaryKey(t => t.IdPedido)
                 .ForeignKey("dbo.Clientes", t => t.IdCliente, cascadeDelete: true)
-                .ForeignKey("dbo.CupomDescontos", t => t.IdCupomDesconto, cascadeDelete: true)
+                .ForeignKey("dbo.CupomDescontoes", t => t.IdCupomDesconto, cascadeDelete: true)
                 .ForeignKey("dbo.TipoEntregas", t => t.IdTipoEntrega, cascadeDelete: true)
                 .Index(t => t.IdTipoEntrega)
                 .Index(t => t.IdCupomDesconto)
@@ -102,14 +102,14 @@ namespace vexed.Migrations
                 .PrimaryKey(t => t.IdTipoEntrega);
             
             CreateTable(
-                "dbo.Produtos",
+                "dbo.Produtoes",
                 c => new
                     {
                         IdProduto = c.Int(nullable: false, identity: true),
                         NomeProduto = c.String(nullable: false),
                         DescricaoProduto = c.String(nullable: false, maxLength: 1000),
                         PrecoProduto = c.Double(nullable: false),
-                        Produtostoque = c.Int(nullable: false),
+                        ProdutoEstoque = c.Int(nullable: false),
                         ProdutoDisponivel = c.Boolean(nullable: false),
                         IdGrupo = c.Int(nullable: false),
                         GeneroProduto = c.Int(nullable: false),
@@ -117,7 +117,7 @@ namespace vexed.Migrations
                     })
                 .PrimaryKey(t => t.IdProduto)
                 .ForeignKey("dbo.Fabricantes", t => t.IdFabricante, cascadeDelete: true)
-                .ForeignKey("dbo.Grupos", t => t.IdGrupo, cascadeDelete: true)
+                .ForeignKey("dbo.Grupoes", t => t.IdGrupo, cascadeDelete: true)
                 .Index(t => t.IdGrupo)
                 .Index(t => t.IdFabricante);
             
@@ -125,27 +125,27 @@ namespace vexed.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.ItemPedidos", "IdProduto", "dbo.Produtos");
-            DropForeignKey("dbo.Produtos", "IdGrupo", "dbo.Grupos");
-            DropForeignKey("dbo.Produtos", "IdFabricante", "dbo.Fabricantes");
-            DropForeignKey("dbo.ItemPedidos", "IdPedido", "dbo.Pedidos");
-            DropForeignKey("dbo.Pedidos", "IdTipoEntrega", "dbo.TipoEntregas");
-            DropForeignKey("dbo.Pedidos", "IdCupomDesconto", "dbo.CupomDescontos");
-            DropForeignKey("dbo.Pedidos", "IdCliente", "dbo.Clientes");
-            DropIndex("dbo.Produtos", new[] { "IdFabricante" });
-            DropIndex("dbo.Produtos", new[] { "IdGrupo" });
-            DropIndex("dbo.Pedidos", new[] { "IdCliente" });
-            DropIndex("dbo.Pedidos", new[] { "IdCupomDesconto" });
-            DropIndex("dbo.Pedidos", new[] { "IdTipoEntrega" });
-            DropIndex("dbo.ItemPedidos", new[] { "IdProduto" });
-            DropIndex("dbo.ItemPedidos", new[] { "IdPedido" });
-            DropTable("dbo.Produtos");
+            DropForeignKey("dbo.ItemPedidoes", "IdProduto", "dbo.Produtoes");
+            DropForeignKey("dbo.Produtoes", "IdGrupo", "dbo.Grupoes");
+            DropForeignKey("dbo.Produtoes", "IdFabricante", "dbo.Fabricantes");
+            DropForeignKey("dbo.ItemPedidoes", "IdPedido", "dbo.Pedidoes");
+            DropForeignKey("dbo.Pedidoes", "IdTipoEntrega", "dbo.TipoEntregas");
+            DropForeignKey("dbo.Pedidoes", "IdCupomDesconto", "dbo.CupomDescontoes");
+            DropForeignKey("dbo.Pedidoes", "IdCliente", "dbo.Clientes");
+            DropIndex("dbo.Produtoes", new[] { "IdFabricante" });
+            DropIndex("dbo.Produtoes", new[] { "IdGrupo" });
+            DropIndex("dbo.Pedidoes", new[] { "IdCliente" });
+            DropIndex("dbo.Pedidoes", new[] { "IdCupomDesconto" });
+            DropIndex("dbo.Pedidoes", new[] { "IdTipoEntrega" });
+            DropIndex("dbo.ItemPedidoes", new[] { "IdProduto" });
+            DropIndex("dbo.ItemPedidoes", new[] { "IdPedido" });
+            DropTable("dbo.Produtoes");
             DropTable("dbo.TipoEntregas");
-            DropTable("dbo.Pedidos");
-            DropTable("dbo.ItemPedidos");
-            DropTable("dbo.Grupos");
+            DropTable("dbo.Pedidoes");
+            DropTable("dbo.ItemPedidoes");
+            DropTable("dbo.Grupoes");
             DropTable("dbo.Fabricantes");
-            DropTable("dbo.CupomDescontos");
+            DropTable("dbo.CupomDescontoes");
             DropTable("dbo.Clientes");
         }
     }

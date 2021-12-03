@@ -101,15 +101,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\CupomDescontoesController.cs" />
+    <Compile Include="Controllers\FabricantesController.cs" />
+    <Compile Include="Controllers\GrupoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\TipoEntregasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112020102203_CreateTable.cs" />
-    <Compile Include="Migrations\202112020102203_CreateTable.Designer.cs">
-      <DependentUpon>202112020102203_CreateTable.cs</DependentUpon>
+    <Compile Include="Migrations\202112030130529_EmptyMigration.cs" />
+    <Compile Include="Migrations\202112030130529_EmptyMigration.Designer.cs">
+      <DependentUpon>202112030130529_EmptyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -125,6 +129,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Delete.cshtml" />
     <Content Include="Views\Clientes\Details.cshtml" />
@@ -140,7 +145,31 @@
     <Content Include="Views\Pedidos\Details.cshtml" />
     <Content Include="Views\Pedidos\Edit.cshtml" />
     <Content Include="Views\Pedidos\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Fabricantes\Create.cshtml" />
+    <Content Include="Views\Fabricantes\Delete.cshtml" />
+    <Content Include="Views\Fabricantes\Details.cshtml" />
+    <Content Include="Views\Fabricantes\Edit.cshtml" />
+    <Content Include="Views\Fabricantes\Index.cshtml" />
+    <Content Include="Views\Grupoes\Create.cshtml" />
+    <Content Include="Views\Grupoes\Delete.cshtml" />
+    <Content Include="Views\Grupoes\Details.cshtml" />
+    <Content Include="Views\Grupoes\Edit.cshtml" />
+    <Content Include="Views\Grupoes\Index.cshtml" />
+    <Content Include="Views\TipoEntregas\Create.cshtml" />
+    <Content Include="Views\TipoEntregas\Delete.cshtml" />
+    <Content Include="Views\TipoEntregas\Details.cshtml" />
+    <Content Include="Views\TipoEntregas\Edit.cshtml" />
+    <Content Include="Views\TipoEntregas\Index.cshtml" />
+    <Content Include="Views\ItemPedidoes\Create.cshtml" />
+    <Content Include="Views\ItemPedidoes\Delete.cshtml" />
+    <Content Include="Views\ItemPedidoes\Details.cshtml" />
+    <Content Include="Views\ItemPedidoes\Edit.cshtml" />
+    <Content Include="Views\ItemPedidoes\Index.cshtml" />
+    <Content Include="Views\CupomDescontoes\Create.cshtml" />
+    <Content Include="Views\CupomDescontoes\Delete.cshtml" />
+    <Content Include="Views\CupomDescontoes\Details.cshtml" />
+    <Content Include="Views\CupomDescontoes\Edit.cshtml" />
+    <Content Include="Views\CupomDescontoes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,8 +181,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112020102203_CreateTable.resx">
-      <DependentUpon>202112020102203_CreateTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112030130529_EmptyMigration.resx">
+      <DependentUpon>202112030130529_EmptyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

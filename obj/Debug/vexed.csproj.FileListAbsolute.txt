@@ -74,5 +74,5 @@ C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.csproj.CoreCompileInputs.cache
 C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.csproj.CopyComplete
 C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.dll
 C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.pdb
-C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.Migrations.CreateTable.resources
+C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.Migrations.EmptyMigration.resources
 C:\Users\cnome\Desktop\veexd\obj\Debug\vexed.csproj.GenerateResource.cache

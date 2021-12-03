@@ -1,0 +1,58 @@
+﻿@model vexed.Models.ItemPedido
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ItemPedido</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Pedido.EnvioRastreio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pedido.EnvioRastreio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Produto.NomeProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Produto.NomeProduto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.QuantidadeProduto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.QuantidadeProduto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PrecoItemPedido)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PrecoItemPedido)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdItemPedido }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

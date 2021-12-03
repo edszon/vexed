@@ -7,13 +7,13 @@ namespace vexed.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CreateTable : IMigrationMetadata
+    public sealed partial class EmptyMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EmptyMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112020102203_CreateTable"; }
+            get { return "202112030130529_EmptyMigration"; }
         }
         
         string IMigrationMetadata.Source

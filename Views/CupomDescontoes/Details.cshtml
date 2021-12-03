@@ -1,0 +1,42 @@
+﻿@model vexed.Models.CupomDesconto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>CupomDesconto</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PercentualDesconto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PercentualDesconto)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdCupomDesconto }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

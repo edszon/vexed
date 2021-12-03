@@ -39,13 +39,13 @@ namespace vexed.Models
         [DefaultValue(false)]
         public bool PedidoPago { get; set; }
 
-        public DateTime DataPagamento { get; set; }
+        public DateTime? DataPagamento { get; set; }
 
         [Required]
         [DefaultValue(false)]
         public bool PedidoEnviado { get; set; }
 
-        public DateTime DataEnvio { get; set; }
+        public DateTime? DataEnvio { get; set; }
 
         public string EnvioRastreio { get; set; }
 
@@ -53,13 +53,13 @@ namespace vexed.Models
         [DefaultValue(false)]
         public bool PedidoCancelado { get; set; }
 
-        public DateTime DataCancelamento { get; set; }
+        public DateTime? DataCancelamento { get; set; }
 
         [Required]
         [DefaultValue(false)]
         public bool PedidoEntregue { get; set; }
 
-        public DateTime DataEntrega { get; set; }
+        public DateTime? DataEntrega { get; set; }
 
     }
 }
